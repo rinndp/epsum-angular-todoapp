@@ -1,0 +1,38 @@
+<form>
+    <div>
+        <h1 class="mb-5">Registro</h1>
+        <div class="d-flex">
+            <div>
+                <label for="nombre" class="form-label">Nombre</label><br>
+                <input id="nombre" type="text" class="form-control">
+            </div>
+            <div class="ms-2">
+                <label for="apellido" class="form-label">Apellido</label><br>
+                <input id="apellido" type="text" class="form-control">
+            </div>
+        </div><br>
+
+        <label for="correo" class="form-label">Correo</label><br>
+        <input id="correo" type="email" class="form-control"><br>
+
+        <label for="contraseña" class="form-label">Contraseña</label><br>
+        <div class="row">
+            <input id="contraseña" type="{{typeText}}" class="form-control" aria-describedby="passwordAyuda">
+            <button type="button" class="col-2 rounded-5 ms-2"(click)="tooglePassword()">
+                <i class="bi bi-eye"></i>
+            </button>
+        </div>
+        <p class="form-text" id="passwordAyuda">Tu contraseña debe de tener entre 8-20 caracteres</p>
+
+        <label for="contraseña" class="form-label mt-3">Confirmar contraseña</label>
+        <div class="row">
+            <input id="confirmPassword" type="{{typeText}}" class="form-control" aria-describedby="passwordAyuda">
+            <button type="button" class="col-2 rounded-5 ms-2"(click)="tooglePassword()">
+                <i class="bi bi-eye"></i>
+            </button>
+        </div>
+    </div>
+    <div class="text-center mt-5">
+        <button type="submit" class="bg-dark text-white p-3 rounded-5 text-center w-50" (click)="launchLogin()" >Registrarse</button>
+    </div>
+</form>

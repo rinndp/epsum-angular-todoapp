@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.scss'
 })
-export class LoginComponent {
+export class RegisterComponent {
   showPassword: boolean = false
   typeText: String = 'password';
 
@@ -17,18 +17,14 @@ export class LoginComponent {
 
   tooglePassword () {
     this.showPassword = !this.showPassword
-
-    if (this.showPassword)
+    if (this.showPassword) {
       this.typeText = 'text'
-    else
+    } else {
       this.typeText = 'password'
+    }
   }
 
-  launchRegister () {
-    this.router.navigate([`register`])
-  }
-
-  launchMainPage () {
-    this.router.navigate([`home`])
+  launchLogin() {
+    this.router.navigate(['..'])
   }
 }
