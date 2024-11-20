@@ -1,0 +1,13 @@
+div.top-0 {
+  z-index: 4;
+  background-color: rgba(0,0,0,0.8);
+  div.bg-white {
+    margin: 150px 50px;
+    height: 600px;
+
+    button {
+      box-shadow: 1px 4px 6px;
+      font-size: 30px;
+    }
+  }
+}

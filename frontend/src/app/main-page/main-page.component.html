@@ -94,8 +94,10 @@
         </div>
     </div>
     <div class="">
-        <button class="addButton rounded-circle btn btn-light position-fixed bottom-0 rounded-circle end-0 m-5 z-3">
+        <button class="addButton rounded-circle btn btn-light position-fixed bottom-0 rounded-circle end-0 m-5 z-3" (click)="toogleAddTaskModal()">
             <i class="bi bi-plus"></i>
         </button>
     </div>
 </body>
+
+<app-add-task-modal *ngIf="showAddTaskModal"></app-add-task-modal>

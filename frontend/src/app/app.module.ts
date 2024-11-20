@@ -11,6 +11,7 @@ import { LayoutSinHeaderComponent } from './layout-sin-header/layout-sin-header.
 import { LayoutConHeaderComponent } from './layout-con-header/layout-con-header.component';
 import { RegisterComponent } from './register/register.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { AddTaskModalComponent } from './add-task-modal/add-task-modal.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MainPageComponent } from './main-page/main-page.component';
     LayoutSinHeaderComponent,
     LayoutConHeaderComponent,
     RegisterComponent,
-    MainPageComponent
+    MainPageComponent,
+    AddTaskModalComponent
   ],
   imports: [
     BrowserModule,
