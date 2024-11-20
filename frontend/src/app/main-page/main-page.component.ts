@@ -6,5 +6,24 @@ import { Component } from '@angular/core';
   styleUrl: './main-page.component.scss'
 })
 export class MainPageComponent {
+  showTaksToDo: boolean = false;
+  showTaksDoing: boolean = false;
+  showTaksDone: boolean = false;
+  showTaksDelayed: boolean = false;
 
+  toogleTaksToDo () {
+    this.showTaksToDo =! this.showTaksToDo;
+  }
+
+  toogleTaksDoing () {
+    this.showTaksDoing =! this.showTaksDoing;
+  }
+
+  toogleTaksDone () {
+    this.showTaksDone =! this.showTaksDone;
+  }
+
+  toogleTaksDelayed () {
+    this.showTaksDelayed =! this.showTaksDelayed;
+  }
 }
