@@ -12,6 +12,7 @@ import { LayoutConHeaderComponent } from './layout-con-header/layout-con-header.
 import { RegisterComponent } from './register/register.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { AddTaskModalComponent } from './add-task-modal/add-task-modal.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -25,11 +26,12 @@ import { AddTaskModalComponent } from './add-task-modal/add-task-modal.component
     MainPageComponent,
     AddTaskModalComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

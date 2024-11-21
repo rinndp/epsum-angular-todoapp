@@ -1,20 +1,33 @@
 <div class="top-0 bottom-0 start-0 end-0 position-fixed z-4">
     <div class="bg-white p-3 opacity-100">
         <div class="row">
-            <button class="btn btn-light border-0 bg-dark col-2" (click)="closeAddTaskModal()">
+            <button class="x btn btn-light border-0 bg-dark col-2" (click)="closeAddTaskModal()">
                 <i class="bi bi-x text-secondary"></i>
             </button>
-            <h2 class="col-7">Añadir tarea</h2>
+            <h2 class="col-7  ms-3">Añadir tarea</h2>
         </div>
         <div class="mx-3 my-5">
-            <div class="ms-2">
-                <label for="nombreTask" class="form-label">Nombre de la tarea</label><br>
-                <input id="nombreTask" type="text" class="form-control">
-            </div><br>
-            <div class="ms-2">
-                <label for="apellido" class="form-label">Fecha</label><br>
-                <input id="apellido" type="date" class="form-control">
-            </div>
+            <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+                <div class="ms-2">
+                    <label for="nombreTask" class="form-label">Nombre de la tarea</label><br>
+                    <input id="nombreTask" type="text" class="form-control" required [(ngModel)]="task.nombre" [ngModelOptions]="{standalone: true}">
+                </div><br>
+                <div class="ms-2">
+                    <label for="fecha" class="form-label" >Fecha</label><br>
+                    <input id="fecha" type="date" class="form-control" required [(ngModel)]="task.fecha" [ngModelOptions]="{standalone: true}">
+                </div><br>
+                <div class="ms-2">
+                    <label for="categoria" class="form-label">Categoria</label><br>
+                    <select id="categoria" class="form-select" required [(ngModel)]="task.categoria" [ngModelOptions]="{standalone: true}">
+                        <option value="trabajo">TRABAJO</option>
+                        <option value="familia">FAMILIA</option>
+                        <option value="hogar">HOGAR</option>
+                    </select>
+                </div>
+                <div class="text-center mt-5 mb-4">
+                    <button type="submit" class="bg-dark text-white p-3 rounded-5 text-center w-50">Crear</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

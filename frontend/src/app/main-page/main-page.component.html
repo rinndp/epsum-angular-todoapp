@@ -8,20 +8,21 @@
             <button class="btn btn-light mt-2 col-3" (click)="toogleTaksToDo()">
                 <i class="bi bi-triangle-fill text-center justify-content-center"></i>
             </button>
-
             <div *ngIf="showTaksToDo" class="bg-white">
-                <div class="row p-2">
-                    <button class="btn btn-light col-1 bg-white border-white">
-                        <i class="bi bi-trash text-center justify-content-center fs-5"></i>
-                    </button>
-                    <p class="col-2 mt-3 me-5">Task 1</p>
-                    <button class="btn btn-light col-1 star bg-white border-white">
-                        <i class="bi bi-star text-center justify-content-center fs-5"></i>
-                    </button>
-                    <p class="col-3 mt-3">DD/MM/AA</p>
-                    <button class="btn btn-light col-1 bg-white border-white">
-                        <i class="bi bi-three-dots text-center justify-content-center fs-5"></i>
-                    </button>
+                <div  *ngFor="let task of currentTasks" class="bg-white">
+                    <div class="row p-2">
+                        <button class="btn btn-light col-1 bg-white border-white" (click)="removeTask(task)">
+                            <i class="bi bi-trash text-center justify-content-center fs-5"></i>
+                        </button>
+                        <p class="col-2 mt-3 me-5">{{task.nombre}}</p>
+                        <button class="btn btn-light col-1 star bg-white border-white">
+                            <i class="bi bi-star text-center justify-content-center fs-5"></i>
+                        </button>
+                        <p class="col-3 mt-3">{{task.fecha}}</p>
+                        <button class="btn btn-light col-1 bg-white border-white">
+                            <i class="bi bi-three-dots text-center justify-content-center fs-5"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import {AddTaskService} from "../services/modales/add-task.service";
+import {ShowAddTaskModalService} from "../services/modales/show-add-task-modal.service";
+import {Router} from "@angular/router";
+import {AddRemoveTaskService} from "../services/add-remove-task/add-remove-task.service";
+import {Task} from "../services/interfaces/task";
 
 @Component({
   selector: 'app-add-task-modal',
@@ -7,11 +10,24 @@ import {AddTaskService} from "../services/modales/add-task.service";
   styleUrl: './add-task-modal.component.scss'
 })
 export class AddTaskModalComponent {
+
+  task = {
+    nombre: "",
+    fecha: new Date(0, 0, 0),
+    categoria: "",
+  }
+
   constructor(
-      private addTaskService: AddTaskService,
+      private showAddTaskModalService: ShowAddTaskModalService,
+      private addRemoveTaskService: AddRemoveTaskService,
   ) {}
 
+  onSubmit () {
+    this.addRemoveTaskService.addTask(this.task)
+    console.log("Tarea creada",this.task);
+  }
+
   closeAddTaskModal(): void {
-    this.addTaskService.updateShowAddTaskModal(false);
+    this.showAddTaskModalService.updateShowAddTaskModal(false);
   }
 }
