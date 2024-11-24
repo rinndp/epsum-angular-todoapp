@@ -23,7 +23,16 @@ export class AddTaskModalComponent {
   ) {}
 
   onSubmit () {
-    this.addRemoveTaskService.addTask(this.task)
+    if (this.task.categoria == "trabajo") {
+      this.addRemoveTaskService.addTaskWork(this.task)
+    } else if (this.task.categoria == "familia") {
+      this.addRemoveTaskService.addTaskFamily(this.task)
+    } else if (this.task.categoria == "hogar") {
+      this.addRemoveTaskService.addTaskHome(this.task)
+    } else {
+      console.log("error")
+    }
+    this.closeAddTaskModal()
     console.log("Tarea creada",this.task);
   }
 

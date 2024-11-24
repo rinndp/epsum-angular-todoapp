@@ -29,6 +29,6 @@ export class LoginComponent {
   }
 
   launchMainPage () {
-    this.router.navigate([`home`])
+    this.router.navigate([`work`])
   }
 }

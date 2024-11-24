@@ -8,9 +8,9 @@
         </div>
         <hr>
 
-        <a class="text-secondary text-uppercase mb-5 d-block text-decoration-none fs-5">Trabajo</a>
-        <a class="text-secondary text-uppercase mb-5 d-block text-decoration-none fs-5">Familia</a>
-        <a class="text-secondary text-uppercase d-block text-decoration-none fs-5">Hogar</a>
+        <a class="text-secondary text-uppercase mb-5 d-block text-decoration-none fs-5" (click)="launchWork()">Trabajo</a>
+        <a class="text-secondary text-uppercase mb-5 d-block text-decoration-none fs-5" (click)="launchFamilia()">Familia</a>
+        <a class="text-secondary text-uppercase d-block text-decoration-none fs-5" (click)="launchHome()">Hogar</a>
     </nav>
 
     <div class="col-2">
@@ -23,11 +23,8 @@
         <span class="text-secondary">ToDoApp</span>
     </div>
 
-    <div class="col-4 position-absolute end-0 ms-5">
-        <button type="button" class="btn btn-light bg-dark text-white me-2 ms-2">
-            <i class="bi bi-search"></i>
-        </button>
-        <button type="button" class="btn btn-light bg-dark text-white">
+    <div class="col-4">
+        <button type="button" class="user btn btn-light bg-dark text-white" (click)="launchLogin()">
             <i class="bi bi-person"></i>
         </button>
     </div>

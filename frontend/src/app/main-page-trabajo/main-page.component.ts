@@ -4,18 +4,19 @@ import {AddRemoveTaskService} from "../services/add-remove-task/add-remove-task.
 import {Task} from "../services/interfaces/task";
 
 @Component({
-  selector: 'app-main-page',
+  selector: 'app-main-page-trabajo',
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })
 export class MainPageComponent implements OnInit {
-  showTaksToDo: boolean = false;
-  showTaksDoing: boolean = false;
-  showTaksDone: boolean = false;
-  showTaksDelayed: boolean = false;
+  showTaksToDo: boolean = true;
+  showTaksDoing: boolean = true;
+  showTaksDone: boolean = true;
   showAddTaskModal: boolean = false;
 
   currentTasks: Task[] | null = null;
+  currentTasksDoing: Task[] = []
+  currentTasksDone: Task[] = []
 
   constructor(
       private showAddTaskModalService: ShowAddTaskModalService,
@@ -40,10 +41,6 @@ export class MainPageComponent implements OnInit {
     this.showTaksDone =! this.showTaksDone;
   }
 
-  toogleTaksDelayed () {
-    this.showTaksDelayed =! this.showTaksDelayed;
-  }
-
   saveShowAddTaskModalValue() {
     this.showAddTaskModalService.showAddTaskModalObservable$.subscribe(show => {
       this.showAddTaskModal = show;
@@ -51,13 +48,34 @@ export class MainPageComponent implements OnInit {
   }
 
   updateArrayListTask() {
-    this.addRemoveTaskService.arrayListTaskObservable$.subscribe(taks  => {
+    this.addRemoveTaskService.arrayListTaskWorkObservable$.subscribe(taks  => {
       this.currentTasks = taks;
     })
   }
 
   removeTask(task: Task) {
-    this.addRemoveTaskService.removeTask(task)
+    this.addRemoveTaskService.removeTaskWork(task)
+  }
+
+  addTaskDoing (task: Task) {
+    this.currentTasksDoing.push(task);
+    this.removeTask(task);
+    console.log(this.currentTasksDoing);
+  }
+
+  addTaskDone (task: Task) {
+    this.currentTasksDone.push(task);
+    this.removeTaskDoing(task);
+    console.log(this.currentTasksDone);
+  }
+
+
+  removeTaskDoing (task: Task) {
+    this.currentTasksDoing.splice(this.currentTasksDoing.indexOf(task), 1);
+  }
+
+  removeTaskDone (task: Task) {
+    this.currentTasksDone.splice(this.currentTasksDone.indexOf(task), 1);
   }
 
   toogleAddTaskModal () {

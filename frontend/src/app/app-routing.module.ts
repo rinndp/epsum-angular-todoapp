@@ -4,7 +4,9 @@ import {LoginComponent} from "./login/login.component";
 import {LayoutSinHeaderComponent} from "./layout-sin-header/layout-sin-header.component";
 import {RegisterComponent} from "./register/register.component";
 import {LayoutConHeaderComponent} from "./layout-con-header/layout-con-header.component";
-import {MainPageComponent} from "./main-page/main-page.component";
+import {MainPageComponent} from "./main-page-trabajo/main-page.component";
+import {MainPageFamiliaComponent} from "./main-page-familia/main-page-familia.component";
+import {MainPageHogarComponent} from "./main-page-hogar/main-page-hogar.component";
 
 const routes: Routes = [
   {
@@ -16,10 +18,12 @@ const routes: Routes = [
     ]},
 
   {
-    path: "home",
+    path: "",
     component: LayoutConHeaderComponent,
     children: [
-      {path: "", component: MainPageComponent},
+      {path: "work", component: MainPageComponent},
+      {path: "family", component: MainPageFamiliaComponent},
+      {path: "home", component: MainPageHogarComponent},
     ]},
 
   {path: "**", component: LoginComponent}

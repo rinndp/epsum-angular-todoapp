@@ -10,9 +10,16 @@ import { LoginComponent } from './login/login.component';
 import { LayoutSinHeaderComponent } from './layout-sin-header/layout-sin-header.component';
 import { LayoutConHeaderComponent } from './layout-con-header/layout-con-header.component';
 import { RegisterComponent } from './register/register.component';
-import { MainPageComponent } from './main-page/main-page.component';
+import { MainPageComponent } from './main-page-trabajo/main-page.component';
 import { AddTaskModalComponent } from './add-task-modal/add-task-modal.component';
 import {FormsModule} from "@angular/forms";
+import { MainPageFamiliaComponent } from './main-page-familia/main-page-familia.component';
+import { MainPageHogarComponent } from './main-page-hogar/main-page-hogar.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -24,13 +31,19 @@ import {FormsModule} from "@angular/forms";
     LayoutConHeaderComponent,
     RegisterComponent,
     MainPageComponent,
-    AddTaskModalComponent
+    AddTaskModalComponent,
+    MainPageFamiliaComponent,
+    MainPageHogarComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         NgbModule,
-        FormsModule
+        FormsModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatIconModule,
+        BrowserAnimationsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
