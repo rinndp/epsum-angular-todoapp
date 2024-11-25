@@ -1,0 +1,15 @@
+<h1 class="bg-dark text-white p-4 justify-content-center align-items-center text-center text-uppercase">detalles tarea</h1>
+<div class="m-4">
+    <button class="btn btn-light fs-4 bg-dark text-white" (click)="launchListaTareaExamen()">
+        <i class="bi bi-arrow-bar-left"></i>
+    </button><br><br>
+    <label class="display-5">ID</label>
+    <p class="mt-3">{{tareaExamen?.id}}</p>
+    <label class="display-5">Nombre</label>
+    <p class="mt-3">{{tareaExamen?.nombre}}</p>
+    <label class="display-5">Descripción</label>
+    <p class="mt-3">{{tareaExamen?.descripcion}}</p>
+    <label class="display-5">Estado</label>
+    <p class="text-uppercase mt-3">{{tareaExamen?.estado}}</p>
+</div>
+

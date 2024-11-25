@@ -19,6 +19,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BotonExamenComponent } from './boton-examen/boton-examen.component';
+import { ListaTareasExamenComponent } from './lista-tareas-examen/lista-tareas-examen.component';
+import { DetallesTareaExamenComponent } from './detalles-tarea-examen/detalles-tarea-examen.component';
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MainPageComponent,
     AddTaskModalComponent,
     MainPageFamiliaComponent,
-    MainPageHogarComponent
+    MainPageHogarComponent,
+    BotonExamenComponent,
+    ListaTareasExamenComponent,
+    DetallesTareaExamenComponent
   ],
     imports: [
         BrowserModule,

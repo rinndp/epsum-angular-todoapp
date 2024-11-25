@@ -1,0 +1,13 @@
+div.row {
+  background-color: #efefef;
+}
+
+select {
+  width: 50%;
+}
+
+button.bg-dark {
+  &[disabled] {
+    opacity: 0.5;
+  }
+}

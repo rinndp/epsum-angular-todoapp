@@ -7,6 +7,8 @@ import {LayoutConHeaderComponent} from "./layout-con-header/layout-con-header.co
 import {MainPageComponent} from "./main-page-trabajo/main-page.component";
 import {MainPageFamiliaComponent} from "./main-page-familia/main-page-familia.component";
 import {MainPageHogarComponent} from "./main-page-hogar/main-page-hogar.component";
+import {ListaTareasExamenComponent} from "./lista-tareas-examen/lista-tareas-examen.component";
+import {DetallesTareaExamenComponent} from "./detalles-tarea-examen/detalles-tarea-examen.component";
 
 const routes: Routes = [
   {
@@ -24,6 +26,8 @@ const routes: Routes = [
       {path: "work", component: MainPageComponent},
       {path: "family", component: MainPageFamiliaComponent},
       {path: "home", component: MainPageHogarComponent},
+      {path: "lista-tareas-examen", component: ListaTareasExamenComponent},
+      {path: "detalles-tarea-examen", component: DetallesTareaExamenComponent},
     ]},
 
   {path: "**", component: LoginComponent}

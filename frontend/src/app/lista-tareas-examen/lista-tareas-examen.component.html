@@ -1,0 +1,23 @@
+<h1 class="bg-dark text-white p-4 justify-content-center align-items-center text-center">LISTA DE TAREAS</h1>
+<button class="btn btn-light fs-4 bg-dark text-white mx-4 my-3" (click)="launchMainPage()">
+    <i class="bi bi-arrow-bar-left"></i>
+</button><br><br>
+<form class="mx-3 my-4 row" [formGroup]="filtrado">
+    <label for="estado" class="form-label display-5 col-3">Filtro</label>
+    <select id="estado" class="form-select col-7 ms-2 me-2" formControlName="estado">
+        <option value=""> - Seleciona -</option>
+        <option value="todas">Todas</option>
+        <option value="finalizadas">Finalizadas</option>
+        <option value="pendientes">Pendientes</option>
+    </select>
+    <button class="btn btn-light col-2 ms-2 bg-dark text-white" [disabled]="filtrado.invalid" (click)="filtrarLista()">
+        <i class="bi bi-search"></i>
+    </button>
+</form>
+<div *ngFor="let tarea of arrayMostrar" class="my-3">
+    <div class="row justify-content-center align-items-center">
+        <p class="col-3 mt-3">{{tarea.nombre}}</p>
+        <p class="col-3 mt-3 text-uppercase">{{tarea.estado}}</p>
+        <button type="button" class="btn btn-light bg-dark text-white col-3 ms-2" (click)="launchDetalles(tarea)">Ver más</button>
+    </div>
+</div>
