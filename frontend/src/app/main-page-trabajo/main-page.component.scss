@@ -14,10 +14,6 @@ div.bg-dark {
   div.align-center {
     border: 1px solid #545454;
 
-    div.bg-white {
-      animation: smooth-appear 1s ease forwards;
-    }
-
     p.col-9 {
       font-size: 25px;
       margin-top: 10px;
@@ -38,6 +34,9 @@ div.bg-dark {
     }
     p.datef {
       margin-left: 50px;
+    }
+    .dots {
+      margin-top: -3px;
     }
   }
 }
