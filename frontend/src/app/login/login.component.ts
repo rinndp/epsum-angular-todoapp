@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -8,11 +9,17 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent {
   showPassword: boolean = false
+  formulario: FormGroup;
   typeText: String = 'password';
 
   constructor(
       private router: Router,
+      private formBuilder: FormBuilder,
   ) {
+    this.formulario = this.formBuilder.group({
+      email: ["", [Validators.required, Validators.email]],
+      password: ["", [Validators.required, Validators.minLength(8), Validators.maxLength(20)]]
+    })
   }
 
   tooglePassword () {
@@ -30,5 +37,6 @@ export class LoginComponent {
 
   launchMainPage () {
     this.router.navigate([`work`])
+    alert("Se ha iniciado sesión");
   }
 }

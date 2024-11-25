@@ -12,4 +12,9 @@ form {
       }
     }
   }
+  button.login {
+    &[disabled] {
+      opacity: 0.4;
+    }
+  }
 }

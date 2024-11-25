@@ -1,11 +1,11 @@
-<form>
+<form method="post" [formGroup]="formulario" (ngSubmit)="launchMainPage()">
     <div>
         <h1 class="mb-5">Inicio de sesión</h1>
-        <label for="usuario" class="form-label">Correo</label><br>
-        <input id="usuario" type="email" class="form-control"><br><br>
+        <label for="correo" class="form-label">Correo</label><br>
+        <input id="correo" type="email" class="form-control" formControlName="email" ><br><br>
         <label for="contraseña" class="form-label">Contraseña</label><br>
         <div class="row">
-            <input id="contraseña" type="{{typeText}}" class="form-control" aria-describedby="passwordAyuda">
+            <input id="contraseña" type="{{typeText}}" class="form-control" aria-describedby="passwordAyuda" formControlName="password">
             <button type="button" class="col-2 rounded-5 ms-2"(click)="tooglePassword()">
                 <i class="bi bi-eye"></i>
             </button>
@@ -13,10 +13,10 @@
         <p class="form-text" id="passwordAyuda">Tu contraseña debe de tener entre 8-20 caracteres</p>
     </div>
     <div class="text-center mt-5 mb-4">
-        <button type="submit" class="bg-dark text-white p-3 rounded-5 text-center w-50" (click)="launchMainPage()">Iniciar sesión</button>
+        <button type="submit" class="login bg-dark text-white p-3 rounded-5 text-center w-50" [disabled]="formulario.invalid">Iniciar sesión</button>
     </div>
     <div class="text-center">
         <p class="form-text">¿No tienes cuenta?</p>
-        <button type="submit" class="bg-dark text-white p-3 rounded-5 text-center w-50" (click)="launchRegister()">Registrarse</button>
+        <button type="button" class="bg-dark text-white p-3 rounded-5 text-center w-50" (click)="launchRegister()" >Registrarse</button>
     </div>
 </form>

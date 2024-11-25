@@ -12,7 +12,7 @@ import { LayoutConHeaderComponent } from './layout-con-header/layout-con-header.
 import { RegisterComponent } from './register/register.component';
 import { MainPageComponent } from './main-page-trabajo/main-page.component';
 import { AddTaskModalComponent } from './add-task-modal/add-task-modal.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MainPageFamiliaComponent } from './main-page-familia/main-page-familia.component';
 import { MainPageHogarComponent } from './main-page-hogar/main-page-hogar.component';
 import { MatMenuModule } from '@angular/material/menu';
@@ -44,6 +44,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         MatButtonModule,
         MatIconModule,
         BrowserAnimationsModule,
+        ReactiveFormsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
