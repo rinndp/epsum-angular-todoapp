@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BotonExamenComponent } from './boton-examen/boton-examen.component';
 import { ListaTareasExamenComponent } from './lista-tareas-examen/lista-tareas-examen.component';
 import { DetallesTareaExamenComponent } from './detalles-tarea-examen/detalles-tarea-examen.component';
+import { TrabajandoConArraysComponent } from './trabajando-con-arrays/trabajando-con-arrays.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { DetallesTareaExamenComponent } from './detalles-tarea-examen/detalles-t
     MainPageHogarComponent,
     BotonExamenComponent,
     ListaTareasExamenComponent,
-    DetallesTareaExamenComponent
+    DetallesTareaExamenComponent,
+    TrabajandoConArraysComponent
   ],
     imports: [
         BrowserModule,

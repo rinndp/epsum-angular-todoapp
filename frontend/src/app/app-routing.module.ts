@@ -9,6 +9,7 @@ import {MainPageFamiliaComponent} from "./main-page-familia/main-page-familia.co
 import {MainPageHogarComponent} from "./main-page-hogar/main-page-hogar.component";
 import {ListaTareasExamenComponent} from "./lista-tareas-examen/lista-tareas-examen.component";
 import {DetallesTareaExamenComponent} from "./detalles-tarea-examen/detalles-tarea-examen.component";
+import {TrabajandoConArraysComponent} from "./trabajando-con-arrays/trabajando-con-arrays.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
       {path: "work", component: MainPageComponent},
       {path: "family", component: MainPageFamiliaComponent},
       {path: "home", component: MainPageHogarComponent},
+      {path: "arrays", component: TrabajandoConArraysComponent},
       {path: "lista-tareas-examen", component: ListaTareasExamenComponent},
       {path: "detalles-tarea-examen", component: DetallesTareaExamenComponent},
     ]},
