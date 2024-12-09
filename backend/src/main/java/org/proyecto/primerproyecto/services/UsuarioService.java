@@ -15,12 +15,16 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usersRepository;
 
-    public List<Usuario> getUsers() {
+    public List<Usuario> findAll() {
         return usersRepository.findAll();
     }
 
     public Optional<Usuario> getUserById(Long id) {
         return this.usersRepository.findById(id);
+    }
+
+    public void createUser (Usuario user) {
+        this.usersRepository.save(user);
     }
 
     public Usuario updateUser(Usuario user) {

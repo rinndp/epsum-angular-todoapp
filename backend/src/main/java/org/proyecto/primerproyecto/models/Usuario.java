@@ -17,9 +17,14 @@ public class Usuario {
     @Column(nullable = false, length = 20)
     private String password;
 
-    @ManyToOne
-    @JoinColumn(name="rol_id", nullable = false)
-    private Rol rol;
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private String email;
+
+    @Column()
+    private int age;
 
     public long getId() {
         return id;
@@ -45,11 +50,27 @@ public class Usuario {
         this.password = password;
     }
 
-    public Rol getRol() {
-        return rol;
+    public String getName() {
+        return name;
     }
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
